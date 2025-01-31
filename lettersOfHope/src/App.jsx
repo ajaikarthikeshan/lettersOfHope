@@ -7,43 +7,67 @@ import LettersCarousel from './components/ApprovedLetters.jsx';
 import Footer from './components/Footer.jsx';
 import Modal from './components/Modal.jsx';
 
-// Temporary mock data for development
-const mockLetters = [
-  {
-    id: 1,
-    sender: "John Doe",
-    message: "Stay strong, Dr. Djalali. The academic community stands with you."
-  },
-  {
-    id: 2,
-    sender: "Anonymous",
-    message: "Your dedication to emergency medicine and disaster response continues to inspire us all."
-  }
-];
-
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [letters, setLetters] = useState([]);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Toggle modal function
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-OoxFGyzPH31BfXFD5uyFiEblZkWpJ0ltd9bM1ERcKfaKcx6DWwvfIqqHpoutFwHo/exec';
+
+  const fetchApprovedLetters = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(APPS_SCRIPT_URL);
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch messages`);
+      }
+      
+      const data = await response.json();
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      
+      setLetters(data);
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching letters:', err);
+      setError('Unable to load messages. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    // For development, use mock data
-    setLetters(mockLetters);
-    setLoading(false);
+    fetchApprovedLetters();
+    
+    // Refresh data every 5 minutes
+    const refreshInterval = setInterval(fetchApprovedLetters, 5 * 60 * 1000);
+    
+    // Cleanup interval on component unmount
+    return () => clearInterval(refreshInterval);
   }, []);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+    // Refresh letters when modal closes
+    if (isModalOpen) {
+      fetchApprovedLetters();
+    }
+  };
 
   return (
     <div className="app">
       <Hero onWriteLetterClick={toggleModal} />
       <About />
       <OriceProject />
-      <LettersCarousel letters={letters} loading={loading} error={error} />
+      <LettersCarousel 
+        letters={letters} 
+        loading={loading} 
+        error={error} 
+      />
       <Footer />
       {isModalOpen && <Modal onClose={toggleModal} />}
     </div>

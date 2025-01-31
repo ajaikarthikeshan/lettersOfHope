@@ -5,7 +5,7 @@ function About() {
     <section className="about">
       <div className="about-content">
         <img 
-          src="/images/djalali-photo.jpg" 
+          src="/images/djalali.jpg" 
           alt="Dr. Ahmadreza Djalali"
           className="profile-image"
         />
