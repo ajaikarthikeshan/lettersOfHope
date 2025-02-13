@@ -5,11 +5,14 @@ function OriceProject() {
     <section className="orice">
       <div className="orice-content">
         <div className="orice-text">
-          <h2>UBC ORICE Project</h2>
+          <h2>SARxUBC</h2>
           <p>
-            A university-led initiative to protect academic freedom and support scholars 
-            at risk worldwide. Through advocacy, research, and community engagement, 
-            we work to safeguard the fundamental right to education and scholarly pursuit.
+          The UBC Scholars in Prison Engagementship is a collaborative initiative 
+          that brings together students, faculty, and advocacy groups to support 
+          imprisoned academics worldwide. Rooted in the principles of academic freedom, 
+          human rights, and global solidarity, this program works in partnership with the 
+          Scholars at Risk (SAR) Network to raise awareness, mobilize advocacy efforts, and 
+          contribute to the protection of scholars facing persecution.
           </p>
         </div>
         <div className="orice-image">

@@ -30,7 +30,7 @@ function LettersCarousel({ letters, loading, error }) {
   if (loading) {
     return (
       <div className="loading">
-        <span className="loading-text">Loading messages of hope...</span>
+        <span className="loading-text">Loading letters of hope...</span>
       </div>
     );
   }
@@ -46,7 +46,7 @@ function LettersCarousel({ letters, loading, error }) {
   if (!letters || letters.length === 0) {
     return (
       <section className="letters-carousel">
-        <h2>Messages of Hope</h2>
+        <h2>Letters of Hope</h2>
         <div className="empty-state">
           No approved messages yet. Be the first to write one!
         </div>
@@ -56,7 +56,7 @@ function LettersCarousel({ letters, loading, error }) {
 
   return (
     <section className="letters-carousel">
-      <h2>Messages of Hope</h2>
+      <h2>Letters of Hope</h2>
       <div className="carousel-container">
         <button 
           className="nav-button prev" 

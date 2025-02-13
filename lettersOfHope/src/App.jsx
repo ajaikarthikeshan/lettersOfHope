@@ -42,17 +42,12 @@ function App() {
 
   useEffect(() => {
     fetchApprovedLetters();
-    
-    // Refresh data every 5 minutes
     const refreshInterval = setInterval(fetchApprovedLetters, 5 * 60 * 1000);
-    
-    // Cleanup interval on component unmount
     return () => clearInterval(refreshInterval);
   }, []);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
-    // Refresh letters when modal closes
     if (isModalOpen) {
       fetchApprovedLetters();
     }
@@ -60,7 +55,11 @@ function App() {
 
   return (
     <div className="app">
-      <Hero onWriteLetterClick={toggleModal} />
+      <Hero 
+        onWriteLetterClick={toggleModal} 
+        letterCount={letters.length}
+        loading={loading}
+      />
       <About />
       <OriceProject />
       <LettersCarousel 
