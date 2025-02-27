@@ -89,9 +89,7 @@ function Hero({ onWriteLetterClick, letterCount = 0, loading }) {
       <div className="hero-content">
         <h1>Letters of امید Hope</h1>
         <p className="mission">
-          Join our global campaign to secure the release of Dr. Ahmadreza Djalali, 
-          an emergency medicine specialist and scholar wrongfully imprisoned. Your voice matters.
-        </p>
+        Join our global campaign to secure the release of Dr. Ahmadreza Djalali, an emergency medicine specialist and scholar wrongfully imprisoned. His death sentence, handed down in 2017 by Iranian authorities, remains pending, and urgent global action is needed to prevent his execution, which could occur at any time. Your voice matters.        </p>
         <button className="cta-button" onClick={onWriteLetterClick}>
           <span className="icon">
             <Send size={20} strokeWidth={2} />
