@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './App.css';
+// import './App.css';
 import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
 import OriceProject from './components/Oriceproject.jsx'
