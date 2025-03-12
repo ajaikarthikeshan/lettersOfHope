@@ -1,14 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Add HSL color variables */
+/* src/index.css */
 :root {
-  --border: 213.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  /* Add all other HSL variables here */
+  font-family: 'Open Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
