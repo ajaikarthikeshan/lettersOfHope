@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@netlify/functions": "^3.0.0",
+    "@tailwindcss/postcss": "^4.0.13",
     "@vitejs/plugin-react": "^4.3.4",
     "airtable": "^0.12.2",
     "embla-carousel-react": "^8.5.2",
