@@ -93,7 +93,7 @@ function Hero({ onWriteLetterClick, letterCount = 0, loading }) {
         Join our global campaign to secure the release of Dr. Ahmadreza Djalali, an emergency medicine specialist and scholar wrongfully imprisoned. His death sentence, handed down in 2017 by Iranian authorities, remains pending, and urgent global action is needed to prevent his execution, which could occur at any time. Your voice matters.   
         </p>
 
-        <button className="cta-button" onClick={onWriteLetterClick}>
+        <button className="cta-button animate-item" onClick={onWriteLetterClick}>
           <span className="icon">
             <Send size={20} strokeWidth={2} />
           </span>
