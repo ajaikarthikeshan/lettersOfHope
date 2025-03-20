@@ -55,22 +55,26 @@ function App() {
 
   return (
     <div className="app">
-      <Hero 
-        onWriteLetterClick={toggleModal} 
-        letterCount={letters.length}
-        loading={loading}
-      />
+      <Hero onWriteLetterClick={toggleModal} letterCount={letters.length} loading={loading} />
       <About />
       <OriceProject />
-      <LettersCarousel 
-        letters={letters} 
-        loading={loading} 
-        error={error} 
-      />
+      <LettersCarousel letters={letters} loading={loading} error={error} />
+      <div className="cta-section">
+        <div className="container text-center">
+          <h2>Add Your Voice</h2>
+          <p>
+            Every letter makes a difference. Join the global community standing in solidarity with Dr. Djalali and his
+            family.
+          </p>
+          <button className="cta-button-large" onClick={toggleModal}>
+            Send a Letter of Hope
+          </button>
+        </div>
+      </div>
       <Footer />
       {isModalOpen && <Modal onClose={toggleModal} />}
     </div>
-  );
+  )
 }
 
 export default App;
